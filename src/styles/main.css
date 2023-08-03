@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 70px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+
+}
+
+.side-header {
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-content {
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+
+.side-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.side-content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.side-content::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border-radius: 10px;
+}
+
+.side-content::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+.side-menu ul {
+    text-align: center;
+}
+
+.side-menu a {
+    display: block;
+    padding: 1.2rem 0rem;
+}
+
+.side-menu a.active {
+    background: linear-gradient(to right, #007bff, #00c3ff);
+}
+
+.side-menu li:last-child {
+    margin-top: 350px;
+}
+
+
+
+
+
+#menu-toggle:checked~.sidebar {
+    width: 70px;
+}
+
+#menu-toggle:checked~.sidebar .side-header span {
+    display: none;
+}
+
+#menu-toggle:checked~.main-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+#menu-toggle:checked~.main-content header {
+    left: 60px;
+}
+
+#menu-toggle:checked~.sidebar .profile,
+#menu-toggle:checked~.sidebar .side-menu a small {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar .side-menu a span {
+    font-size: 1.3rem;
+}
+
+
+/* Header */
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 165px;
+    z-index: 100;
+    height: 60px;
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+    background: #fff;
+    transition: left 300ms;
+    height: 65px;
+}
+
+.header-content,
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    justify-content: space-between;
+    padding: 0rem 1rem;
+}
+
+.header-menu {
+    justify-content: flex-end;
+    padding-top: .5rem;
+}
+
+.user-profile {
+    margin-right: 5px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 50px;
+    background-color: #f9fafb;
+    border-radius: 50px;
+    align-items: center;
+    padding: 10px 20px;
+    float: right;
+}
+
+.user-photo {
+    width: 35px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 3%;
+}
+
+.responsive-container {
+    flex: 1;
+    min-width: 0;
+    margin-right: 1rem;
+}
+
+.main-content {
+    margin-left: 165px;
+    width: calc(100% - 165px);
+    transition: margin-left 300ms;
+}
+
+.page-header {
+    padding: 1.3rem 1rem;
+    background: #E9edf2;
+    border-bottom: 1px solid #dee2e8;
+}
+
+.page-content {
+    padding: 1.3rem 1rem;
+    background: #f1f4f9;
+}
+
+.record-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.searchInput input {
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    border: 1px solid #e8ebee;
+    padding: 18px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #b2b3bb;
+
+}
+
+
+.searchButton {
+    background-color: white;
+    padding: 10px;
+    font-weight: 500;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: #60553c;
+    margin-left: 10px;
+    width: 100px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    font-size: 16px;
+}
+
+.FilterListIcon {
+    color: #444444;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    cursor: pointer;
+    background-color: #fbfcfd;
+}
+
+.record-section,
+.search-section {
+    display: flex;
+    align-items: center;
+}
+
+
+input,
+button {
+    outline: none;
+}
+
+.search-section input {
+    height: 35px;
+    display: inline-block;
+    width: 75px;
+    padding: 0rem .5rem;
+    margin-right: .8rem;
+    color: #666;
+}
+
+.record-section button {
+    color: #fff;
+    height: 37px;
+    border-radius: 4px;
+    padding: 0rem 1rem;
+    border: none;
+    font-weight: 600;
+}
+
+.search-section input {
+    width: 150px;
+}
+
+/* Tabs */
+.userTabSection {
+    display: flex;
+    justify-content: center;
+}
+
+.tabList {
+    font-weight: 500;
+    align-items: center;
+    background-color: #fff;
+    color: grey;
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    border-radius: 10px;
+}
+
+.tabHighlight {
+    background: linear-gradient(to right, #007bff, #00c3ff);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.tabListItem {
+    margin-right: 30px;
+}
+
+.tabListItem:hover {
+    cursor: pointer;
+}
+
+.downloadButton button {
+    padding: 18px 25px;
+    font-size: 24px;
+    font-weight: 500;
+    border: 0;
+    border-radius: 50px;
+    color: grey;
+    letter-spacing: 1px;
+    box-shadow: 1px 2px lightgrey;
+    border: 1px solid lightgrey
+}
+
+
+/* Table */
+.table-container {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto';
+}
+
+table thead tr {
+    background: #e9edf2;
+}
+
+table thead th {
+    padding: 1rem 0rem;
+    text-align: left;
+    color: #687288;
+    font-weight: 500;
+}
+
+table thead th:first-child {
+    padding-left: 1rem;
+}
+
+table thead tr {
+    background-color: #fff;
+    height: 60px;
+}
+
+table tbody td {
+    padding: 1rem 0rem;
+    color: #315172;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+table tbody td:first-child {
+    padding-left: 1rem;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dee2e8;
+    height: 60px;
+
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fff;
+    height: 60px;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f9fafb;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .sidebar {
+        width: 70px;
+        z-index: 90;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    table {
+        width: 900px;
+    }
+
+}
